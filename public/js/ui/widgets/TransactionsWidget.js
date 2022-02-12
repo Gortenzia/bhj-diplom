@@ -12,7 +12,10 @@ class TransactionsWidget {
    * необходимо выкинуть ошибку.
    * */
   constructor( element ) {
-
+    if (!element) {
+      throw new Error('Ошибка, элемент не существует');
+    }
+    this.element = element;
   }
   /**
    * Регистрирует обработчики нажатия на
