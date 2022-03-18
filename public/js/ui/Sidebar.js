@@ -24,7 +24,10 @@ class Sidebar {
       event.preventDefault();
       sidebarMini.classList.toggle('sidebar-open');
       sidebarMini.classList.toggle('sidebar-collapse');
-    }
+    });
+  }
+
+
 
   /**
    * При нажатии на кнопку входа, показывает окно входа
@@ -34,28 +37,30 @@ class Sidebar {
    * выходу устанавливает App.setState( 'init' )
    * */
   static initAuthLinks() {
-      const registerBtn = document.querySelector('.menu-item_register a'),
+    const registerBtn = document.querySelector('.menu-item_register a'),
       loginBtn = document.querySelector('.menu-item_login a'),
       logoutBtn = document.querySelector('.menu-item_logout a'),
       registerModal = App.getModal('register'),
       loginModal = App.getModal('login');
 
-      registerBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        registerModal.open();
-      });
+    registerBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      registerModal.open();
+    });
 
-      loginBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        loginModal.open();
-      });
+    loginBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      loginModal.open();
+    });
 
-      logoutBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        User.logout((err, response) => {
-          if (response && response.success) {
-            App.setState('init');
-          }
-        });
-      })
-    }                
+    logoutBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      User.logout((err, response) => {
+        if (response && response.success) {
+          App.setState('init');
+        }
+      });
+    });
+  }
+}
+

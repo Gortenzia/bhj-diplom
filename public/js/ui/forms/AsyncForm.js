@@ -50,7 +50,7 @@ class AsyncForm {
     return formDataObj;
   }
 
-  
+
   onSubmit(options) {
   }
 
@@ -59,7 +59,6 @@ class AsyncForm {
    * данные, полученные из метода getData()
    * */
   submit() {
-    const data = this.getData();
-    this.onSubmit(data);
-  }
+    this.onSubmit(this.getData());
+    }
 }

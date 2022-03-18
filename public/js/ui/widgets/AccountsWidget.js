@@ -64,8 +64,6 @@ class AccountsWidget {
           response.data.forEach((item) => this.renderItem(item));
         }
       });
-    } else {
-      return;
     }
   }
 
@@ -111,7 +109,7 @@ class AccountsWidget {
             <a href="#">
             <span>${item.name}</span> /
             <span>${item.sum} ₽</span>
-             </a>
+            </a>
         </li>
     `;
   }

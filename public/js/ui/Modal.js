@@ -11,7 +11,7 @@ class Modal {
    * Если переданный элемент не существует,
    * необходимо выкинуть ошибку.
    * */
-  constructor(element){
+  constructor(element) {
     if (!element) {
       throw new Error("Ошибка!")
     }
@@ -29,26 +29,26 @@ class Modal {
     for (let closeBtn of this.closeBtnArr) {
       closeBtn.addEventListener('click', (e) => this.onClose(e));
     };
-
+  }
   /**
    * Срабатывает после нажатия на элементы, закрывающие окно.
    * Закрывает текущее окно (Modal.close())
    * */
   onClose(e) {
-      e.preventDefault();
-      this.close();
-    };
+    e.preventDefault();
+    this.close();
+  };
   /**
    * Открывает окно: устанавливает CSS-свойство display
    * со значением «block»
    * */
   open() {
-      this.element.style.display = 'block';
-    };
+    this.element.style.display = 'block';
+  };
   /**
    * Закрывает окно: удаляет CSS-свойство display
    * */
-  close(){
-      this.element.style.display = none; //может указать пустую строчку?
+  close() {
+    this.element.style.display = '';
   }
-  }
+}
