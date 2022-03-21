@@ -66,8 +66,6 @@ class TransactionsPage {
         }
       });
       this.clear();
-    } else {
-      return;
     }
   }
 
@@ -84,8 +82,6 @@ class TransactionsPage {
           App.update();
         }
       });
-    } else {
-      return;
     }
   }
 
@@ -108,9 +104,7 @@ class TransactionsPage {
     Transaction.list(options, (err, response) => {
       if (response && response.success) {
         this.renderTransactions(response.data);
-      } else {
-        return;
-      }
+      } 
     });
   }
 
